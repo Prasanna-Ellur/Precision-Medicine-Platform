@@ -61,9 +61,9 @@ export function PatientDataForm({ onSubmit, initialData }: PatientDataFormProps)
         geneticMarkers: [...(prev.geneticMarkers || []), value],
       }));
     } else {
-      const subField = field === 'condition' ? 'conditions' : 
-                       field === 'medication' ? 'medications' :
-                       field === 'allergy' ? 'allergies' : 'familyHistory';
+      const subField = field === 'condition' ? 'conditions' :
+        field === 'medication' ? 'medications' :
+          field === 'allergy' ? 'allergies' : 'familyHistory';
       setFormData(prev => ({
         ...prev,
         medicalHistory: {
@@ -123,7 +123,7 @@ export function PatientDataForm({ onSubmit, initialData }: PatientDataFormProps)
             <Label htmlFor="gender">Gender</Label>
             <Select
               value={formData.demographics.gender}
-              onValueChange={value => setFormData(prev => ({
+              onValueChange={(value: string) => setFormData(prev => ({
                 ...prev,
                 demographics: { ...prev.demographics, gender: value }
               }))}
@@ -303,7 +303,7 @@ export function PatientDataForm({ onSubmit, initialData }: PatientDataFormProps)
             <Label htmlFor="smoking">Smoking Status</Label>
             <Select
               value={formData.lifestyle.smoking}
-              onValueChange={value => setFormData(prev => ({
+              onValueChange={(value: string) => setFormData(prev => ({
                 ...prev,
                 lifestyle: { ...prev.lifestyle, smoking: value }
               }))}
@@ -322,7 +322,7 @@ export function PatientDataForm({ onSubmit, initialData }: PatientDataFormProps)
             <Label htmlFor="alcohol">Alcohol Consumption</Label>
             <Select
               value={formData.lifestyle.alcohol}
-              onValueChange={value => setFormData(prev => ({
+              onValueChange={(value: string) => setFormData(prev => ({
                 ...prev,
                 lifestyle: { ...prev.lifestyle, alcohol: value }
               }))}
@@ -342,7 +342,7 @@ export function PatientDataForm({ onSubmit, initialData }: PatientDataFormProps)
             <Label htmlFor="exercise">Exercise Level</Label>
             <Select
               value={formData.lifestyle.exercise}
-              onValueChange={value => setFormData(prev => ({
+              onValueChange={(value: string) => setFormData(prev => ({
                 ...prev,
                 lifestyle: { ...prev.lifestyle, exercise: value }
               }))}
@@ -362,7 +362,7 @@ export function PatientDataForm({ onSubmit, initialData }: PatientDataFormProps)
             <Label htmlFor="diet">Diet Type</Label>
             <Select
               value={formData.lifestyle.diet}
-              onValueChange={value => setFormData(prev => ({
+              onValueChange={(value: string) => setFormData(prev => ({
                 ...prev,
                 lifestyle: { ...prev.lifestyle, diet: value }
               }))}
